@@ -103,8 +103,8 @@ if TORCH_VERSION != 'parrots' and digit_version(TORCH_VERSION) < digit_version(
             filename = file_name
         cached_file = os.path.join(model_dir, filename)
         if not os.path.exists(cached_file):
-            sys.stderr.write('Downloading: "{}" to {}\n'.format(
-                url, cached_file))
+            sys.stderr.write('Downloading, progress: {}: "{}" to {}\n'.format(
+                progress, url, cached_file))
             hash_prefix = None
             if check_hash:
                 r = HASH_REGEX.search(filename)  # r is Optional[Match[str]]

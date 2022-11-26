@@ -85,6 +85,7 @@ if TORCH_VERSION != 'parrots' and digit_version(TORCH_VERSION) < digit_version(
         # Issue warning to move data if old env is set
 
         print('GOT HERE!! Progress:', progress)
+        raise AssertionError('GOT HERE NOW')
 
         if os.getenv('TORCH_MODEL_ZOO'):
             warnings.warn(

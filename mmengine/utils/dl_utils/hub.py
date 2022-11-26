@@ -53,7 +53,7 @@ if TORCH_VERSION != 'parrots' and digit_version(TORCH_VERSION) < digit_version(
     def load_url(url,
                  model_dir=None,
                  map_location=None,
-                 progress=True,
+                 progress=os.isatty(0),
                  check_hash=False,
                  file_name=None):
         r"""Loads the Torch serialized object at the given URL.
@@ -68,7 +68,7 @@ if TORCH_VERSION != 'parrots' and digit_version(TORCH_VERSION) < digit_version(
             map_location (optional): a function or a dict specifying how to
                 remap storage locations (see torch.load)
             progress (bool, optional): whether or not to display a progress bar
-                to stderr. Default: True
+                to stderr. Default: os.isatty(0)
             check_hash(bool, optional): If True, the filename part of the URL
                 should follow the naming convention ``filename-<sha256>.ext``
                 where ``<sha256>`` is the first eight or more digits of the

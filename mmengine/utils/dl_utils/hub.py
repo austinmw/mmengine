@@ -83,6 +83,9 @@ if TORCH_VERSION != 'parrots' and digit_version(TORCH_VERSION) < digit_version(
             >>> state_dict = torch.hub.load_state_dict_from_url(url)
         """
         # Issue warning to move data if old env is set
+
+        print('GOT HERE!! Progress:', progress)
+
         if os.getenv('TORCH_MODEL_ZOO'):
             warnings.warn(
                 'TORCH_MODEL_ZOO is deprecated, please use env '
